@@ -56,7 +56,7 @@ class MainWindow(QMainWindow):
         # adding action to back button
         # making current tab to go back
         back_btn.triggered.connect(lambda: self.tabs.currentWidget().back())
- 
+        
         # adding this to the navigation tool bar
         navtb.addAction(back_btn)
  
@@ -103,9 +103,11 @@ class MainWindow(QMainWindow):
  
         # showing all the components
         self.show()
- 
+
+        self.setWindowIcon(QIcon('web.png'))  
+  
         # setting window title
-        self.setWindowTitle("Geek PyQt5")
+        self.setWindowTitle("Browse")
  
     # method for adding new tab
     def add_new_tab(self, qurl = None, label ="Blank"):
@@ -179,7 +181,7 @@ class MainWindow(QMainWindow):
         title = self.tabs.currentWidget().page().title()
  
         # set the window title
-        self.setWindowTitle("% s - Geek PyQt5" % title)
+        self.setWindowTitle("% s - Browse" % title)
  
     # action to go to home
     def navigate_home(self):
@@ -220,7 +222,7 @@ class MainWindow(QMainWindow):
 app = QApplication(sys.argv)
  
 # setting name to the application
-app.setApplicationName("Geek PyQt5")
+app.setApplicationName("Browse")
  
 # creating MainWindow object
 window = MainWindow()
